@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+:root{
+    --BG--: #0F111A;
+    --Bg--: #181c2b;
+    --Titulo--: #0F111A;
+    --twitch--:#9147FF;
+    --twitter: #00A2F3;
+    --facebook--:#4867AA;
+    --instagram--:#BC368B;
+    --linkedin--:#007BB6;
+    --discord--:#6B89EF;
+    --BgContactos--:#ccc8c8;
+
+}
+ 
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.contenedor{
+    
+    width: 100%;
+    min-height: 100vh;
+    background: var(--BG--);
+    display: grid;
+    place-items: center;
+    position: relative;
+
+
+        &-seccion{
+           width: 80%;
+           height: 400px;
+           background: var(--BgContactos--);
+           border-bottom-left-radius: 50px;
+           border-top-right-radius: 50px;
+           position: absolute;
+         
+           &__titulo{
+            font-family: 'Open Sans', 'sans-serif' ;
+            text-align: center;
+            font-size: 2.8vw;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--Titulo--);
+           
+            }
+
+            &__list{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 40%;
+                
+
+                .fab{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 40px;
+                    width: 90px;
+                    height: 90px;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    background: var(--Bg--);
+                    margin: 10px 20px;
+                    color: var(--BgContactos--);
+                    transition: transform 0.5s ease-in;
+
+
+                    &:hover{
+                        animation: animacionSombra 2s linear infinite;
+                        transform: scale(1.1);
+                    }
+                
+                    &.fa-twitter:hover {
+                        color: var(--twitter);
+                        background: var(--BgContactos--);
+                
+                    }
+                    &.fa-twitch:hover{
+                        color: var(--twitch--);
+                        background: var(--BgContactos--);
+                    }
+                    &.fa-facebook-square:hover{
+                        color: var(--facebook--);
+                        background: var(--BgContactos--);
+                    }
+                    &.fa-discord:hover{
+                        color: var(--discord--);
+                        background: var(--BgContactos--);
+                
+                    }
+                    &.fa-instagram:hover{
+                        color: var(--instagram--);
+                        background: var(--BgContactos--);
+                    }
+                    &.fa-linkedin-in:hover{
+                        color: var(--linkedin--);
+                        background: var(--BgContactos--);
+                    }
+                }
+                
+                @keyframes animacionSombra{
+                    0%{
+                        box-shadow: 0 0 0 0 rgba(197, 12, 12, 0.7);
+                    }
+                    40%{
+                        box-shadow: 0 0 0 20px rgba(158, 10, 10, 0.7);
+                    }
+                    80%{
+                        box-shadow: 0 0 0 20px rgba(231, 5, 5, 0);
+                    }
+                    100%{
+                        box-shadow: 0 0 0  rgba(197, 12, 12, 0);
+                    }
+                }
+
+
+            }
+ 
+        }
+        
+    }
+
+
+    $braekpoint-movil: 576px;
+    @media (max-width: $braekpoint-movil)  {
+
+        .contenedor-seccion .contenedor-seccion__list{
+            display: grid;
+            grid-template-columns: repeat(2, 150px);
+            grid-template-rows: repeat(3, 110px);
+            place-items: center;
+
+        }
+
+        .contenedor-seccion .contenedor-seccion__titulo{
+            font-size: 3.9vw;
+        }
+        .contenedor-seccion__list .fab{
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+            width: 70px;
+            height: 70px;
+        }
+
+    }
+
+
+     
